@@ -1,0 +1,39 @@
+array (
+  'USER' => 'nginx',
+  'HOME' => '/var/cache/nginx',
+  'FCGI_ROLE' => 'RESPONDER',
+  'APPLICATION_ENV' => 'dejan',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/htdocs/__g4code/phaker_demo//index.php',
+  'QUERY_STRING' => 'c=profile',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/?c=profile',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/htdocs/__g4code/phaker_demo',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx/1.4.4',
+  'REMOTE_ADDR' => '192.168.1.11',
+  'REMOTE_PORT' => '58799',
+  'SERVER_ADDR' => '192.168.1.31',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'dev.phaker.dev',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'dev.phaker.dev',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1387063790.7375219,
+  'REQUEST_TIME' => 1387063790,
+)'GET''GET''HEAD'
+'HEAD'
+'HEAD'
+'POST'
+'GET'
+'POST'

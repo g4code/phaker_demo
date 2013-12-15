@@ -1,0 +1,16 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/g4code/phaker"
+        }
+    ],
+    "require": {
+        "g4code/phaker": "0.1.*",
+        "g4/router": "*",
+        "fzaninotto/faker": "*"
+    },
+    "autoload": {
+        "psr-0": {"Demo\\": "src/"}
+    }
+}
