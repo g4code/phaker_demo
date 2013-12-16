@@ -6,29 +6,31 @@ use Phaker\Phaker;
 use Phaker\Responder\Responder;
 use Phaker\Request;
 
-$route = require_once __DIR__ . '/router.php';
-
-echo '<pre>';
-var_dump($route->values);
-die;
-
+$options = require_once __DIR__ . '/router.php';
 
 $faker = new Phaker();
 
 $responder = new Responder;
 $responder
     ->setUrl('profile')
-    ->setMethod(Phaker::METHOD_GET)
+    ->setMethod(Phaker::METHOD_INDEX)
     ->setResponseClass('Phaker\Response\Ok')
-    ->setServiceClass('FooBar');
+    ->setServiceClass('Demo\Profile\Index');
 
 $faker->register($responder);
 
-$controller = isset($_GET['c']) ? $_GET['c'] : '';
+$responder = new Responder;
+$responder
+    ->setUrl('profile')
+    ->setMethod(Phaker::METHOD_GET)
+    ->setResponseClass('Phaker\Response\Ok')
+    ->setServiceClass('Demo\Profile\Get');
+
+$faker->register($responder);
 
 $request = new Request;
 $request
-    ->setMethod(Phaker::METHOD_GET)
-    ->setUrl($controller);
+    ->setUrl($options['url'])
+    ->setMethod($options['method']);
 
 $faker->parse($request);

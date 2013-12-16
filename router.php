@@ -1,21 +1,21 @@
 <?php
 
-use Aura\Router\Map;
-use Aura\Router\DefinitionFactory;
+use G4\Router\Map;
+use G4\Router\DefinitionFactory;
 use G4\Router\RouteFactory;
 
 $attach = [
     '/' => [
         'routes' => [
             '' => [
-                'path' => '?{:service}?/?{:id}?/?',
+                'path' => '?{:url}?/?{:id}?/?(.*)', // rest is ignored
                 'params' => [
-                    'id' => '(\w+)',
+                    'id'    => '(\w+)',
                 ],
                 'values' => [
-                    'service' => 'index',
-                    'method'  => 'index', // not HTTP method, "translated" from REQUEST_METHOD
-                    'id'      => 0,
+                    'url'    => 'index',
+                    'method' => 'index', // not HTTP method, "translated" from REQUEST_METHOD
+                    'id'     => 0,
                 ],
                 'is_match' => function(array $server, \ArrayObject $matches) {
                     if(isset($server['REQUEST_METHOD'])) {
@@ -41,8 +41,10 @@ $attach = [
     ]
 ];
 
-$router = new Map(new DefinitionFactory, new RouteFactory, $attach);
-
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-return $router->match($path, $_SERVER);
+$router = new Map(new DefinitionFactory, new RouteFactory, $attach);
+
+$route = $router->match($path, $_SERVER);
+
+return $route->values;
